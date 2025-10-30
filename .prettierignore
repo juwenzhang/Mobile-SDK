@@ -1,0 +1,12 @@
+# 依赖和构建产物
+node_modules/
+dist/
+coverage/
+
+# 配置文件
+*.config.js
+*.config.json
+
+# 其他
+.DS_Store
+*.log

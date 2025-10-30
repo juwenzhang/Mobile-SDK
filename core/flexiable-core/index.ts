@@ -89,9 +89,6 @@ export {
     startResizeListener,
     stopResizeListener,
     handleResize,
-    FlexibleConfig,
-    FlexibleInstance,
-
     createFlexible,
     flexible
 }
