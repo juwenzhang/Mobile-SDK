@@ -1,0 +1,78 @@
+/*
+设备类型的样式混合
+@type - 设备类型（mobile/tablet/pc/tv）
+*/
+.mixin-device-type(@type) {
+    .device-@{type} & {
+        @content;
+    }
+}
+
+/*
+系统样式兼容
+@os - 系统（ios/android/windows/macos/linux）
+*/
+.mixin-os(@os) {
+    .os-@{os} & {
+        @content;
+    }
+}
+
+/*
+浏览器混合兼容实现吧
+@browser - 浏览器（chrome/safari/firefox/edge/macromessagee
+*/
+.mixin-browser(@browser) {
+    .browser-@{browser} & {
+        @content;
+    }
+}
+
+/*
+特殊设备支持
+*/
+.mixin-touch(@support: true) {
+    if(@support){
+        .support-touch & {
+            @content;
+        }
+    } else {
+        .no-support-touch & {
+            @content;
+        }
+    }
+}
+
+// 导出混合函数吧
+.device-mobile() {
+    .mixin-device-type(mobile) {
+        @content;
+    }
+}
+.device-tablet() {
+    .mixin-device-type(tablet) {
+        @content;
+    }
+}
+.device-pc() {
+    .mixin-device-type(pc) {
+        @content;
+    }
+}
+
+.os-ios() {
+    .mixin-os(ios) {
+        @content;
+    }
+}
+.os-android {
+    .mixin-os(android) {
+        @content;
+    }
+}
+
+.browser-micromessager {
+    .mixin-browser(wechat) {
+        @content;
+    }
+}
